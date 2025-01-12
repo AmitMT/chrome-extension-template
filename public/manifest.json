@@ -1,0 +1,20 @@
+{
+	"version": "1.0.0",
+	"name": "React Chrome Extension",
+	"description": "This extension is made for demonstration purposes",
+	"action": {
+		"default_popup": "popup/index.html",
+		"default_title": "React Chrome Extension"
+	},
+	"background": {
+		"service_worker": "background/src/background.js"
+	},
+	"content_scripts": [
+		{
+			"js": ["content_scripts/youtube/src/index.js"],
+			"matches": ["https://*.youtube.com/*"]
+		}
+	],
+	"permissions": ["activeTab", "scripting", "history", "storage", "tabs"],
+	"manifest_version": 3
+}
